@@ -1,0 +1,6 @@
+#!/bin/sh
+
+grep '^[A-Z]\{3\}-[0-9]\{3\}\|^TECH|^FIX' "$1" || {
+	echo >&2 Commit message should start with a reference to a project issue.
+	exit 1
+}
